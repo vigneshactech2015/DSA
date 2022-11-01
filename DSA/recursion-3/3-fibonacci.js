@@ -16,3 +16,17 @@ return fib(num-1)+fib(num-2);
 }
 
 fib(3)
+
+//with memoized version
+
+function fib(num,memo=[]){
+ if(memo[num]!==undefined)return memo[num];
+if(num<=2){
+    return 1
+}
+var res=fib(num-1,memo)+fib(num-2,memo);
+ memo[num]=res;
+ return res;
+}
+
+fib(3)
