@@ -20,3 +20,19 @@ function isPalindrome(str){
   }
 
   isPalindrome('tacocat')
+
+//best method using two pointer
+var validPalindrome = function(s) {
+    let regex=/[\W_]/g
+    let newString=s.toLowerCase().replace(regex,'')
+    let left=0;
+    let right=newString.length-1;
+    while(left<right){
+        if(newString[left]!==newString[right]){
+            return false
+        }
+        left++;
+        right--;
+    }
+    return true
+};
