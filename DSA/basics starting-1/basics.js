@@ -44,3 +44,18 @@ function shuffle(nums) {
 console.log(shuffle([2,5,1,3,4,7]))
 
 //output [2,3,5,4,1,7]
+
+
+function Unique(arr){
+  let obj={}
+  for(let i=0;i<arr.length;i++){
+    if(obj[arr[i]]){
+      delete obj[arr[i]]
+    }else{
+      obj[arr[i]]=arr[i]
+    }
+  }
+  return Object.values(obj)
+}
+
+console.log(Unique([1,1,2,4,5]))
