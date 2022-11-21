@@ -59,3 +59,19 @@ function Unique(arr){
 }
 
 console.log(Unique([1,1,2,4,5]))
+
+
+//remove vowel
+
+function vowelremoval(s){
+    let result=''
+    for(let i=0;i<s.length;i++){
+    if(s[i]==="a"||s[i]==="e"||s[i]==="i"||s[i]==="o"||s[i]==="u"){
+    continue    
+    }
+        result=result+s[i]
+    }
+    return result
+}
+
+console.log(vowelremoval("leetcodeisaplatformforcoders"))
