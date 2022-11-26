@@ -75,3 +75,22 @@ function vowelremoval(s){
 }
 
 console.log(vowelremoval("leetcodeisaplatformforcoders"))
+
+
+//Analyse Pattern
+
+input="a1b10"
+output="abbbbbbbbbb"
+
+function pattern(s){
+    let result=[]
+    let num=s.match(/\d+/g);
+    let nums=num.map((num)=>parseInt(num))
+    let str=s.match(/[a-zA-Z]+/g)
+    for(let i=0;i<str.length;i++){
+        for(let j=0;j<nums[i];j++){
+            result.push(str[i])
+        }
+    }
+    return result.join("")
+}
