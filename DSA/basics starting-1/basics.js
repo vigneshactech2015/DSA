@@ -94,3 +94,21 @@ function pattern(s){
     }
     return result.join("")
 }
+
+//prime number
+
+function prime(num){
+  for(let i=2;i<=num-1;i++){
+    let flag = true
+    if(num%i == 0){
+      flag = false
+    }
+    if(flag){
+      return "it is prime"
+    }else{
+      return "it is not prime"
+    }
+  }
+}
+
+console.log(prime(8))
