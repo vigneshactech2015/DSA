@@ -100,7 +100,7 @@ function pattern(s){
 function prime(num){
   for(let i=2;i<=num-1;i++){
     let flag = true
-    if(num%i == 0){
+    if(num % i == 0){
       flag = false
     }
     if(flag){
@@ -112,3 +112,18 @@ function prime(num){
 }
 
 console.log(prime(8))
+
+//Matrix
+function matrix(){
+  let output = []
+
+  for(let i=0;i<3;i++){
+     output[i] = []
+  for(let j=0;j<3;j++){
+     output[i][j] = 1
+  }
+}
+  return output
+}
+
+console.log(matrix())
