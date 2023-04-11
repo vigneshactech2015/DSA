@@ -136,3 +136,46 @@ var transpose = function(matrix) {
     }
     return matrix
 };
+
+function nearestSmallertoLeft(arr){
+  let result=[]
+  let flag = false
+  for(let i=0;i<arr.length;i++){
+      //remember -1 this part alone
+    for(let j=i-1;j>-1;j--){
+      if(arr[i]>arr[j]){
+        result.push(arr[j])
+        flag = true
+        break
+      }
+    }
+    if(!flag){
+      result.push(-1)
+    }
+  }
+  return result
+}
+
+console.log(nearestSmallertoLeft([5,4,3,2,1]))
+
+function nearestLargesttoRight(arr){
+  let result=[]
+  let flag = false
+  for(let i=0;i<arr.length;i++){
+    for(let j=i+1;j<arr.length;j++){
+      if(arr[j]>arr[i]){
+        result.push(arr[j])
+        flag = true
+        break
+      }
+    }
+   if(!flag){
+     result.push(-1)
+   }
+  }
+  result.push(-1)
+  return result
+}
+
+console.log(nearestLargesttoRight([1,2,3,4,5]))
+
