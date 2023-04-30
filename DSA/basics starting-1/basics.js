@@ -179,3 +179,18 @@ function nearestLargesttoRight(arr){
 
 console.log(nearestLargesttoRight([1,2,3,4,5]))
 
+//flatten array with recursion
+function flatten(arr){
+    let flattened = []
+    for(let i=0;i<arr.length;i++){
+     if(Array.isArray(arr[i])){
+      flattened.concat(flatten(arr[i]))   
+     }else{
+      flattened.push(arr[i])   
+     }
+    }
+    return flattened
+}
+
+//using inbuilt 
+arr.flat(Infinity)
