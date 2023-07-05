@@ -249,11 +249,11 @@ function findSmallestSubarray(arr, target) {
   let windowStart = 0;
   let windowSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    windowSum += arr[i];
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    windowSum += arr[windowEnd];
 
     while (windowSum > target) {
-      minLength = Math.min(minLength, i - windowStart + 1);
+      minLength = Math.min(minLength, windowEnd - windowStart + 1);
       windowSum -= arr[windowStart];
       windowStart++;
     }
@@ -267,3 +267,4 @@ const array = [4, 2, 2, 7, 8, 1, 2, 8, 10];
 const targetSum = 14;
 const smallestSubarrayLength = findSmallestSubarray(array, targetSum);
 console.log("Smallest subarray length:", smallestSubarrayLength);
+
