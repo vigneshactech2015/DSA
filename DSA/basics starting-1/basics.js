@@ -294,3 +294,39 @@ var threeSum = function(nums) {
     }
     return result
 };
+
+
+//3.Find Prime number from 1 to 100
+function isPrime(number) {
+  if (number <= 1) {
+    return false;
+  }
+
+  // Check for divisibility from 2 to the square root of the number
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function findPrimes(start, end) {
+  const primes = [];
+
+  for (let number = start; number <= end; number++) {
+    if (isPrime(number)) {
+      primes.push(number);
+    }
+  }
+
+  return primes;
+}
+
+// Example usage:
+const start = 1;
+const end = 100;
+const primeNumbers = findPrimes(start, end);
+console.log("Prime numbers:", primeNumbers);
+
