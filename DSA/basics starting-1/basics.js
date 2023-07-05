@@ -241,3 +241,29 @@ var flat = function (arr, n) {
     }
     return result
 };
+
+//Find the smallest subarray having a sum larger than a given number
+//1
+function findSmallestSubarray(arr, target) {
+  let minLength = Infinity;
+  let windowStart = 0;
+  let windowSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    windowSum += arr[i];
+
+    while (windowSum > target) {
+      minLength = Math.min(minLength, i - windowStart + 1);
+      windowSum -= arr[windowStart];
+      windowStart++;
+    }
+  }
+
+  return minLength === Infinity ? 0 : minLength;
+}
+
+// Example usage:
+const array = [4, 2, 2, 7, 8, 1, 2, 8, 10];
+const targetSum = 14;
+const smallestSubarrayLength = findSmallestSubarray(array, targetSum);
+console.log("Smallest subarray length:", smallestSubarrayLength);
