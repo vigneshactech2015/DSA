@@ -243,7 +243,7 @@ var flat = function (arr, n) {
 };
 
 //Find the smallest subarray having a sum larger than a given number
-//1
+//1 --> two pointer and sliding window approach
 function findSmallestSubarray(arr, target) {
   let minLength = Infinity;
   let windowStart = 0;
