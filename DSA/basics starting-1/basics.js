@@ -275,7 +275,7 @@ var threeSum = function(nums) {
     nums.sort((a,b)=>a-b)
     //see this
     for(let i=0;i<nums.length-2;i++){
-    //see this
+    //to remove duplicates we check i>0 
         if(i>0 && nums[i]===nums[i-1])continue
         let left = i+1
         let right = nums.length-1
@@ -283,7 +283,7 @@ var threeSum = function(nums) {
         let sum = nums[i]+nums[left]+nums[right]
         if(sum===0){
           result.push([nums[i],nums[left],nums[right]])
-    //see this
+    ////to remove duplicates we check this
           while(nums[left]===nums[left+1])left++
           while(nums[right]===nums[right-1])right--
           left++
