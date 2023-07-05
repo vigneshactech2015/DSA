@@ -330,3 +330,47 @@ const end = 100;
 const primeNumbers = findPrimes(start, end);
 console.log("Prime numbers:", primeNumbers);
 
+//Find GCD using recursion
+function findGCD(a, b) {
+  // Ensure positive values
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  // Base case: if b is 0, return a
+  if (b === 0) {
+    return a;
+  }
+
+  // Recursive case: call the function with b and the remainder of a divided by b
+  return findGCD(b, a % b);
+}
+
+// Example usage:
+const num1 = 24;
+const num2 = 36;
+const gcd = findGCD(num1, num2);
+console.log("GCD:", gcd);
+
+
+//Find gcd using Euclidean algortithm
+
+function findGCD(a, b) {
+  // Ensure positive values
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  // Use the Euclidean algorithm
+  while (b !== 0) {
+    let remainder = a % b;
+    a = b;
+    b = remainder;
+  }
+
+  return a;
+}
+
+// Example usage:
+const num1 = 24;
+const num2 = 36;
+const gcd = findGCD(num1, num2);
+console.log("GCD:", gcd);
