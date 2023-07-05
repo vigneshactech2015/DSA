@@ -268,3 +268,29 @@ const targetSum = 14;
 const smallestSubarrayLength = findSmallestSubarray(array, targetSum);
 console.log("Smallest subarray length:", smallestSubarrayLength);
 
+//using sorting and two pointer approach
+var threeSum = function(nums) {
+    let result=[]
+    if(nums.length<3)return []
+    nums.sort((a,b)=>a-b)
+    //see this
+    for(let i=0;i<nums.length-2;i++){
+    //see this
+        if(i>0 && nums[i]===nums[i-1])continue
+        let left = i+1
+        let right = nums.length-1
+        while(left<right){
+        let sum = nums[i]+nums[left]+nums[right]
+        if(sum===0){
+          result.push([nums[i],nums[left],nums[right]])
+    //see this
+          while(nums[left]===nums[left+1])left++
+          while(nums[right]===nums[right-1])right--
+          left++
+          right--
+        }else if(sum<0)left++
+        else right--
+        }
+    }
+    return result
+};
