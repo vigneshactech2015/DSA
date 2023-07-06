@@ -44,7 +44,8 @@ function swap(arr, i, j) {
 
 // Example usage:
 const array = [8, 4, 2, 10, 5, 1];
-const sortedArray = quickSort
+const sortedArray = quickSort(array)
+console.log(sortedArray)
 
 
 //Comparison between quick and merge sort
