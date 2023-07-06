@@ -45,15 +45,16 @@ findLongestSubstring('thisishowwedoit') // 6
     for (let i = 0; i < str.length; i++) {
       let char = str[i];
       if (seen[char]) {
+           // If the current character is already seen, update the start index
+          // to the next character after the previously seen occurrence of the current character.
         start = Math.max(start, seen[char]);
       }
-        // If the current character is already seen, update the start index
-      // to the next character after the previously seen occurrence of the current character.
+        // Calculate the length of the current substring by taking the difference
+        // between the current index and the start index plus 1.
       
         longest = Math.max(longest, i - start + 1);
-
-        // Calculate the length of the current substring by taking the difference
-    // between the current index and the start index plus 1.
+    // Update the longestSubstringLength if the current substring is longer.
+       
       seen[char] = i + 1;
     }
     return longest;
