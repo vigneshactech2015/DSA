@@ -51,10 +51,12 @@ findLongestSubstring('thisishowwedoit') // 6
       }
         // Calculate the length of the current substring by taking the difference
         // between the current index and the start index plus 1.
-      
+       // Update the longestSubstringLength if the current substring is longer.
+        
         longest = Math.max(longest, i - start + 1);
-    // Update the longestSubstringLength if the current substring is longer.
+   
        
+    // Store the index of the next character after the current character.
       seen[char] = i + 1;
     }
     return longest;
