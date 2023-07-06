@@ -243,6 +243,8 @@ var flat = function (arr, n) {
 };
 
 //Find the smallest subarray having a sum larger than a given number
+//Time Complexity --> O(n)
+//Space Complexity --> O(1)
 //1 --> two pointer and sliding window approach
 function findSmallestSubarray(arr, target) {
   let minLength = Infinity;
@@ -269,6 +271,8 @@ const smallestSubarrayLength = findSmallestSubarray(array, targetSum);
 console.log("Smallest subarray length:", smallestSubarrayLength);
 
 //using sorting and two pointer approach
+//Time Complexity O(n^2)
+//Space Complexity O(1)
 var threeSum = function(nums) {
     let result=[]
     if(nums.length<3)return []
@@ -297,6 +301,12 @@ var threeSum = function(nums) {
 
 
 //3.Find Prime number from 1 to 100
+//Time Complexity --> O(1) -->if specific number is given
+//Space Complexity --> O(1) 
+
+//In general (if specific number is not given)
+//Time Complexity --> O(n log(log(n))
+//Space Complexity --> O(n) 
 function isPrime(number) {
   if (number <= 1) {
     return false;
@@ -331,6 +341,8 @@ const primeNumbers = findPrimes(start, end);
 console.log("Prime numbers:", primeNumbers);
 
 //Find GCD using recursion
+//Time Complexity O(log max(a,b))
+//Space Complexity O(log max(a,b))
 function findGCD(a, b) {
   // Ensure positive values
   a = Math.abs(a);
