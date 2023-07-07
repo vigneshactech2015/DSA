@@ -27,13 +27,20 @@ function mergeSort(arr) {
   return merge(sortedLeft, sortedRight);
 }
 
+// Example usage:
+const array = [8, 4, 2, 10, 5, 1];
+const sortedArray = mergeSort(array);
+console.log("Sorted Array:", sortedArray);
+
+
+
 function merge(left, right) {
   const merged = [];
   let leftIndex = 0;
   let rightIndex = 0;
 
   while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
+    if (left[leftIndex] <= right[rightIndex]) {
       merged.push(left[leftIndex]);
       leftIndex++;
     } else {
@@ -41,12 +48,17 @@ function merge(left, right) {
       rightIndex++;
     }
   }
-
+    //mergesort for duplicates
   // Add the remaining elements from either left or right array
-  return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-}
+  while (leftIndex < left.length) {
+    merged.push(left[leftIndex]);
+    leftIndex++;
+  }
 
-// Example usage:
-const array = [8, 4, 2, 10, 5, 1];
-const sortedArray = mergeSort(array);
-console.log("Sorted Array:", sortedArray);
+  while (rightIndex < right.length) {
+    merged.push(right[rightIndex]);
+    rightIndex++;
+  }
+
+  return merged;
+}
