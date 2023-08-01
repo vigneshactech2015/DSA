@@ -386,3 +386,18 @@ const num1 = 24;
 const num2 = 36;
 const gcd = findGCD(num1, num2);
 console.log("GCD:", gcd);
+
+//maxSubArraySum 
+function getMaxSubSum(arr){
+
+  let maxSum = 0
+  let tempSum = 0
+  for(let i=0;i<arr.length;i++){
+    tempSum = tempSum + arr[i]
+    maxSum = Math.max(maxSum,tempSum)
+    if(tempSum<0) tempSum = 0
+  }
+  return maxSum
+}
+
+console.log(getMaxSubSum([1,2,3])) //answer 6 
