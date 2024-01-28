@@ -159,22 +159,18 @@ function nearestSmallertoLeft(arr){
 console.log(nearestSmallertoLeft([5,4,3,2,1]))
 
 function nearestLargesttoRight(arr){
-  let result=[]
-  let flag = false
+  let result = []
   for(let i=0;i<arr.length;i++){
+    let next = -1;
     for(let j=i+1;j<arr.length;j++){
       if(arr[j]>arr[i]){
-        result.push(arr[j])
-        flag = true
+        next = arr[j]
         break
       }
     }
-   if(!flag){
-     result.push(-1)
-   }
-  }
-  result.push(-1)
-  return result
+  result.push(next)
+}
+return result
 }
 
 console.log(nearestLargesttoRight([1,2,3,4,5]))
