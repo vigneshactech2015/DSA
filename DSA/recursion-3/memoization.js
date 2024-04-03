@@ -11,9 +11,7 @@ function memoize = (fn) =>{
         return result
       }
     }
-
 }
-
 
 const factorial = memoize((x)=>{
   if(x===0) return 1
