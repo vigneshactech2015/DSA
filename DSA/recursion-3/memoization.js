@@ -1,4 +1,4 @@
-function memoize = (fn) =>{
+const memoize = (fn) =>{
     const cache = {}
     
     return (...args)=>{
