@@ -2,8 +2,8 @@
 //Example 3 answer will be 6 (1+2+3)
 
 function sumRange(num){
-    if(num===1)return 1
-    return num+sumRange(num-1)
+    if(num === 1) return 1
+    return num + sumRange(num-1)
 }
 
 sumRange(3)
@@ -12,10 +12,10 @@ sumRange(3)
 //Factorial of number recursive method
 
 function factorial(num){
-if(num===1){
+ if(num === 1){
     return 1
-}
-return num*factorial(num-1)
+ }
+  return num * factorial(num-1)
 }
 
 factorial(3)

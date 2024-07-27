@@ -8,13 +8,14 @@ function bubbleSort(arr){
     for(let j=0;j<arr.length;j++){
         //SWAP
         if(arr[j]>arr[j+1]){
-            let temp=arr[j];
-            arr[j]=arr[j+1];
-            arr[j+1]=temp
+            let temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp
           }
         }
     }
-return arr
+    
+    return arr
 }
 
 bubbleSort([2,3,1,10,4,5])

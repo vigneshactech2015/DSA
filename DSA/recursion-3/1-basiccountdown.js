@@ -25,7 +25,6 @@ countDown(5)
 //sumofdigits
 
 function sum(n){
-    n=n.toString()
-    return n.length==0 ? 0 : +n[0] + sum(n.slice(1))
-    
+    n = n.toString()
+    return n.length == 0 ? 0 : +n[0] + sum(n.slice(1))
 }

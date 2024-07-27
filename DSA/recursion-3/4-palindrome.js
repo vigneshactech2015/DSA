@@ -3,9 +3,9 @@ function isPalindrome(str){
     
     var reg=/[\W_]/g;
     //removing unwanted spaces
-    var LwrStr=str.toLowerCase().replace(reg,'');
-    var cvt=LwrStr.split('').reverse().join('');
-    return cvt===LwrStr;
+    var LwrStr = str.toLowerCase().replace(reg,'');
+    var cvt = LwrStr.split('').reverse().join('');
+    return cvt === LwrStr;
   }
 
   isPalindrome('tacocat')
