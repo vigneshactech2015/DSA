@@ -418,7 +418,21 @@ function getMaxSubSum(arr){
 
 console.log(getMaxSubSum([1,2,3])) //answer 6 
 
+function secondlargestNumber (arr) {
+  let firstLargest = arr[0]
+  let secondLargest
+  for(let i=1 ;i<arr.length ;i++){
+    if(arr[i]<firstLargest){
+      secondLargest = arr[i]
+    }else {
+       secondLargest = firstLargest
+      firstLargest = arr[i]
+    }
+  }
+  return secondLargest
+}
 
+console.log(secondlargestNumber([1,2,3,4,5]))
 
  
 // A Javascript program to find floor(sqrt(x)
