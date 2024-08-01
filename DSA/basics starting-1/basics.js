@@ -434,6 +434,31 @@ function secondlargestNumber (arr) {
 
 console.log(secondlargestNumber([1,2,3,4,5]))
 
+// shift and unshift 
+
+const s = "abcde";
+const goal = "bcdea";
+
+const shiftandmatch = (original, target) => {
+    let originalstring = original.split("");
+    for (let i = 0; i < originalstring.length; i++) {
+        if (originalstring.join("") === target) return true;
+        originalstring.unshift(originalstring.pop());
+    }
+    return false;
+};
+
+// First test case
+console.log(shiftandmatch(s, goal)); // true
+
+// Second test case
+console.log(shiftandmatch("abcde", "abced")); // false
+
+// Additional test cases
+console.log(shiftandmatch("abcde", "cdeab")); // true
+console.log(shiftandmatch("abcde", "eabcd")); // true
+console.log(shiftandmatch("abcde", "abcde")); // true
+
  
 // A Javascript program to find floor(sqrt(x)
  
@@ -458,3 +483,5 @@ function floorSqrt(x)
     }
     return i - 1;
 }
+
+
