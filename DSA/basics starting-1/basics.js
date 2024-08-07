@@ -459,7 +459,38 @@ console.log(shiftandmatch("abcde", "cdeab")); // true
 console.log(shiftandmatch("abcde", "eabcd")); // true
 console.log(shiftandmatch("abcde", "abcde")); // true
 
+// find the length of the longest consecutive ones in array 
+
+function longestConsecutiveOnes(arr) {
+    let maxLength = 0;
+    let currentLength = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 1) {
+            currentLength++; // Increase length of current sequence
+        } else {
+            // Reset the current length when a 0 is encountered
+            if (currentLength > maxLength) {
+                maxLength = currentLength;
+            }
+            currentLength = 0; // Reset current length
+        }
+    }
+
+    // Check once more in case the longest sequence ends at the end of the array
+    if (currentLength > maxLength) {
+        maxLength = currentLength;
+    }
+
+    return maxLength;
+}
+
+// Example usage:
+const arr = [1, 1, 1, 1, 0, 0, 1, 1, 1];
+console.log(longestConsecutiveOnes(arr)); // Output: 4
  
+
+
 // A Javascript program to find floor(sqrt(x)
  
 // Returns floor of square root of x
