@@ -30,8 +30,28 @@ function longestZeroSumSubarray(arr) {
 const array = [1, 2, -2, -1, 2, -2, 1, 1];
 console.log(longestZeroSumSubarray(array)); // Output will be the length of the longest subarray with sum 0
 
+// Finding all subset/powerset in an array
 
-// Finding all subset in an array using Recursion
+const input = [1,2,3]
+
+// output = [[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
+
+function subset (array) {
+    const result = [[]]
+    for(let val of array){
+        const length = result.length
+        for(let i=0;i<length;i++){
+        let temp = result[i].slice()
+        temp.push(val)
+        result.push(temp)
+    }
+    }
+    return result
+}
+
+subset(input)
+
+// Finding all subset sum in an array using Recursion
 
 function getAllSubsetSums(arr) {
     const results = new Set(); // Use a set to avoid duplicate sums
