@@ -1,23 +1,58 @@
-//calculating length of each character in string
+// Longest subarray with sum zero
 
-function charCount(str){
+function longestZeroSumSubarray(arr) {
+    let maxLength = 0; // Variable to store the length of the longest subarray with sum 0
+    let sum = 0;       // Variable to store the cumulative sum
+    let sumIndexMap = {}; // HashMap to store the cumulative sum and its first occurrence index
 
-    var result={}
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]; // Update cumulative sum
 
-    for(let i=0;i<=str.length;i++){
-        var char=str[i].toLowerCase();
+        if (sum === 0) {
+            // If cumulative sum is zero, subarray from start to current index has sum 0
+            maxLength = i + 1; // Update maxLength
+        }
 
-        if(/[a-z0-9]/.test(char)){
-        if(result[char]>0){
-            result[char]++
-        }else{
-            result[char]=1
+        if (sumIndexMap.hasOwnProperty(sum)) {
+            // If this cumulative sum has been seen before
+            let length = i - sumIndexMap[sum]; // Calculate length of subarray with sum 0
+            maxLength = Math.max(maxLength, length); // Update maxLength if this length is greater
+        } else {
+            // Store the first occurrence of this cumulative sum
+            sumIndexMap[sum] = i;
         }
     }
-    }
-    return result
+
+    return maxLength; // Return the length of the longest subarray with sum 0
 }
-charCount('something')
+
+// Example usage
+const array = [1, 2, -2, -1, 2, -2, 1, 1];
+console.log(longestZeroSumSubarray(array)); // Output will be the length of the longest subarray with sum 0
+
+
+// Finding all subset in an array using Recursion
+
+function getAllSubsetSums(arr) {
+    const results = new Set(); // Use a set to avoid duplicate sums
+    function findSubsetSums(index, currentSum) {
+        if (index === arr.length) {
+            results.add(currentSum); // Add the current subset sum to results
+            return;
+        }
+        // Include the current element in the subset
+        findSubsetSums(index + 1, currentSum + arr[index]);
+        // Exclude the current element from the subset
+        findSubsetSums(index + 1, currentSum);
+    }
+    findSubsetSums(0, 0); // Start recursion with the first index and initial sum of 0
+    return Array.from(results); // Convert set to array
+}
+
+// Example usage
+const array = [1, 2, 3];
+console.log(getAllSubsetSums(array)); // Output will be all unique subset sums
+
 
 //Reversing a string
 
