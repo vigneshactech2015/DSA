@@ -68,11 +68,36 @@ function getAllSubsetSums(arr) {
     findSubsetSums(0, 0); // Start recursion with the first index and initial sum of 0
     return Array.from(results); // Convert set to array
 }
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
 
 // Example usage
 const array = [1, 2, 3];
 console.log(getAllSubsetSums(array)); // Output will be all unique subset sums
 
+// Maximum subarray sum 
+
+const maxSubArray = (nums) => {
+    // initiate two variable, maxSum for total max, sum for current max
+    let maxSum = -Infinity
+    let currentSum = 0
+    // iterate through the nums, store sub-problems result
+    for(let i = 0; i < nums.length; i++){ 
+        //cumulating answers to the top
+        
+        //compare currentSum add current number 
+        //with current number and store the maximum value
+        currentSum = Math.max(nums[i], currentSum + nums[i])
+        
+        //compare maxSum with currentSum and store the greater value
+        maxSum = Math.max(currentSum, maxSum)
+        
+    }
+    return maxSum
+}
 
 //Reversing a string
 
