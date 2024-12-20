@@ -595,4 +595,32 @@ function floorSqrt(x)
     return i - 1;
 }
 
+// Combinations Problem using recursion 
+
+function generateCombinations(arrays) {
+  if (arrays.length === 0) return [[]];
+
+  // Get the first array and the rest of the arrays
+  const [firstArray, ...restArrays] = arrays;
+
+  // Recursively generate combinations for the rest of the arrays
+  const combinations = generateCombinations(restArrays);
+
+  // Prepare the result array
+  const result = [];
+
+  // Combine each element of the first array with all combinations of the rest
+  for (const item of firstArray) {
+    for (const combination of combinations) {
+      result.push([item, ...combination]);
+    }
+  }
+
+  return result;
+}
+
+// Example usage
+const input = [[1, 2], [3, 4], [5]];
+const result = generateCombinations(input);
+console.log(result);
 
