@@ -544,7 +544,7 @@ console.log(shiftandmatch("abcde", "eabcd")); // true
 console.log(shiftandmatch("abcde", "abcde")); // true
 
 // find the length of the longest consecutive ones in array 
-
+// HID Question
 function longestConsecutiveOnes(arr) {
     let maxLength = 0;
     let currentLength = 0;
