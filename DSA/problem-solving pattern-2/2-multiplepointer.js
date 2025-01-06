@@ -14,9 +14,11 @@ for(let i=0;i<=arr.length;i++){
 
 sumzero([1,0,2,-1,-2])
 
-//pointer approach
+//2 pointer approach sort it first and then apply pointer approach 
 
-function sumZero(arr){
+function sumZero(ar){
+const arr = ar.map((value,index)=>{value,index})
+arr.sort((a,b)=>a.value - b.value);
 let left=0;
 let right=arr.length-1;
 while(left<right){
