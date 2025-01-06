@@ -17,12 +17,12 @@ sumzero([1,0,2,-1,-2])
 //2 pointer approach sort it first and then apply pointer approach 
 
 function sumZero(ar){
-const arr = ar.map((value,index)=>{value,index})
-arr.sort((a,b)=>a.value - b.value);
+const arr = ar.slice()
+arr.sort((a,b)=>a - b);
 let left=0;
 let right=arr.length-1;
 while(left<right){
-    let sum=arr[left].value+arr[right].value
+    let sum=arr[left]+arr[right]
     if(sum===0){
         return [arr[left],arr[right]]
     }
