@@ -32,6 +32,7 @@ while(left<right){
         left++
     }
 }
+return []
 }
 sumZero([1,0,2,-2])
 
