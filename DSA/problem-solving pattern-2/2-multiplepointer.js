@@ -22,7 +22,7 @@ arr.sort((a,b)=>a.value - b.value);
 let left=0;
 let right=arr.length-1;
 while(left<right){
-    let sum=arr[left]+arr[right]
+    let sum=arr[left].value+arr[right].value
     if(sum===0){
         return [arr[left],arr[right]]
     }
