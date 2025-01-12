@@ -1,3 +1,17 @@
+// Find the missing number
+const findMissingNumber = (arr) => {
+  let result = []; 
+for(let i=1;i<=arr.length+1;i++){
+   if(arr.indexOf(i) === -1){
+    result.push(i);  
+    }
+ }
+  return result;
+}
+
+console.log(findMissingNumber([1,2,6,5]))
+
+
 // Longest subarray with sum zero
 
 function longestZeroSumSubarray(arr) {
