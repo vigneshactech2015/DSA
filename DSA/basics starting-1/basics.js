@@ -1,3 +1,13 @@
+// reverse string using recursion
+const str = 'vignesh'
+
+function reverseStr (input,index) {
+  if(index<0) return ''
+  return input[index] + reverseStr(input,index-1)
+}
+
+console.log(reverseStr(str,str.length-1))
+
 // Find the missing number
 const findMissingNumber = (arr) => {
   let result = []; 
