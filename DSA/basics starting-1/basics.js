@@ -1,3 +1,21 @@
+function intersection(arr1, arr2) {
+  const set2 = new Set(arr2);
+  const result = [];
+  const seen = new Set();
+
+  for (const num of arr1) {
+    if (set2.has(num) && !seen.has(num)) {
+      result.push(num);
+      seen.add(num);
+    }
+  }
+
+  return result;
+}
+
+console.log(intersection([1, 2, 2, 3], [2, 3, 4]));
+// Output: [2, 3]
+
 function mergeSorted(arr1, arr2) {
   const merged = [];
   let i = 0; // pointer for arr1
