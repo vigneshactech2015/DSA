@@ -1,3 +1,34 @@
+function mergeSorted(arr1, arr2) {
+  const merged = [];
+  let i = 0; // pointer for arr1
+  let j = 0; // pointer for arr2
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      merged.push(arr1[i]);
+      i++;
+    } else {
+      merged.push(arr2[j]);
+      j++;
+    }
+  }
+
+  // If any elements remain in arr1
+  while (i < arr1.length) {
+    merged.push(arr1[i]);
+    i++;
+  }
+
+  // If any elements remain in arr2
+  while (j < arr2.length) {
+    merged.push(arr2[j]);
+    j++;
+  }
+
+  return merged;
+}
+
+
 // reverse string using recursion
 const str = 'vignesh'
 
