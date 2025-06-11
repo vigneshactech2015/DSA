@@ -8,7 +8,7 @@ for(var i=0;i<arr.length;i++){
             lowest=j;
         }
     }
-    //then swap
+    //then swap on outer loop
     if(i!==lowest){
         var temp=arr[i];
         arr[i]=arr[lowest];
