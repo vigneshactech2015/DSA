@@ -1,4 +1,4 @@
-//same as bubble sort but lowest value is swapped to 0th index
+//same as bubble sort but swapping is done on outer loop this way it reduces swapping steps on the inner loop
 
 function selectionSort(arr){
 for(var i=0;i<arr.length;i++){
