@@ -14,27 +14,25 @@ for(let i=0;i<=arr.length;i++){
 
 sumzero([1,0,2,-1,-2])
 
-//2 pointer approach sort it first and then apply pointer approach 
+function twoSum(nums, target) {
+  const map = {}; // value -> index
 
-function sumZero(ar){
-const arr = ar.slice()
-arr.sort((a,b)=>a - b);
-let left=0;
-let right=arr.length-1;
-while(left<right){
-    let sum=arr[left]+arr[right]
-    if(sum===0){
-        return [arr[left],arr[right]]
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+
+    if (map.hasOwnProperty(complement)) {
+      return [map[complement], i];
     }
-    else if(sum>0){
-        right--
-    }else{
-        left++
-    }
+
+    map[nums[i]] = i;
+  }
+
+  // If no solution found (not expected as per problem statement)
+  return [];
 }
-return []
-}
-sumZero([1,0,2,-2])
+
+
+
 
 
 //countUniqueValues
