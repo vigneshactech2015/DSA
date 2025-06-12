@@ -284,18 +284,26 @@ console.log(vowelremoval("leetcodeisaplatformforcoders"))
 input="a1b10"
 output="abbbbbbbbbb"
 
-function pattern(s){
-    let result=[]
-    let num=s.match(/\d+/g);
-    let nums=num.map((num)=>parseInt(num))
-    let str=s.match(/[a-zA-Z]+/g)
-    for(let i=0;i<str.length;i++){
-        for(let j=0;j<nums[i];j++){
-            result.push(str[i])
-        }
+function decodeString(input) {
+  let result = "";
+  let i = 0;
+
+  while (i < input.length) {
+    let char = input[i];
+    i++;
+
+    let numStr = "";
+    while (i < input.length && !isNaN(input[i])) {
+      numStr += input[i];
+      i++;
     }
-    return result.join("")
+
+    result += char.repeat(Number(numStr));
+  }
+
+  return result;
 }
+
 
 //prime number
 
