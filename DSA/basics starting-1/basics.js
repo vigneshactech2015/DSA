@@ -16,6 +16,40 @@ function intersection(arr1, arr2) {
 console.log(intersection([1, 2, 2, 3], [2, 3, 4]));
 // Output: [2, 3]
 
+Intersection with frequency 
+
+function intersection(arr1, arr2) {
+  const result = [];
+  const obj1 = {};
+  const obj2 = {};
+
+  // Count frequency in arr1
+  for (let num of arr1) {
+    obj1[num] = (obj1[num] || 0) + 1;
+  }
+
+  // Count frequency in arr2
+  for (let num of arr2) {
+    obj2[num] = (obj2[num] || 0) + 1;
+  }
+
+  // Compare and add min frequency to result
+  for (let key in obj1) {
+    if (obj2.hasOwnProperty(key)) {
+      const freq = Math.min(obj1[key], obj2[key]);
+      for (let i = 0; i < freq; i++) {
+        result.push(Number(key)); // convert key to number
+      }
+    }
+  }
+
+  return result;
+}
+console.log(intersection([1, 2, 2, 3], [2, 2, 3, 4]));
+output :
+[2, 2, 3]
+
+
 function mergeSorted(arr1, arr2) {
   const merged = [];
   let i = 0; // pointer for arr1
